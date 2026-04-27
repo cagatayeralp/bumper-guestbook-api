@@ -1,0 +1,17 @@
+# env files
+.env
+.env.prod
+
+# python
+__pycache__/
+*.pyc
+
+# virtual env
+venv/
+.venv/
+
+# pytest
+.pytest_cache/
+
+# logs
+logs/
