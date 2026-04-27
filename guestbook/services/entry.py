@@ -10,6 +10,10 @@ logger = logging.getLogger("guestbook")
 
 
 def create_entry(name: str, subject: str, message: str) -> Entry:
+    """
+    Creates a guestbook entry and ensures the user exists.
+    Wrapped in a transaction to prevent race conditions.
+    """
     try:
         with transaction.atomic():
             user, _ = GuestUser.objects.get_or_create(name=name)

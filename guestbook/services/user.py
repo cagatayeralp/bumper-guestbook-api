@@ -5,12 +5,12 @@ from guestbook.models import Entry, GuestUser
 
 
 def get_user_stats():
+    # Subquery used to fetch latest entry per user efficiently (avoids N+1 queries)
     latest_entry = (
         Entry.objects
         .filter(user=OuterRef("pk"))
         .order_by("-created_date")
     )
-
     return (
         GuestUser.objects
         .annotate(
