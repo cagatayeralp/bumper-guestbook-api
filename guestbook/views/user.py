@@ -6,6 +6,7 @@ from guestbook.services import get_user_stats
 
 from drf_spectacular.utils import extend_schema
 
+
 class UserStatsAPIView(APIView):
     serializer_class = UserStatsSerializer
 
