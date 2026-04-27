@@ -21,11 +21,9 @@ def create_entry(name: str, subject: str, message: str) -> Entry:
             )
 
             logger.info(
-                "Entry created",
-                extra={
-                    "user": user.name,
-                    "entry_id": entry.id,
-                },
+                "Entry created user=%s entry_id=%s",
+                user.name,
+                entry.id,
             )
 
             return entry
