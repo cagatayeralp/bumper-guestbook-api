@@ -8,7 +8,7 @@ class GuestBookPagination(PageNumberPagination):
 
     def get_paginated_response(self, data):
         return Response({
-            "count": self.page.paginator.count,  # 🔥 doğru
+            "count": self.page.paginator.count,
             "page_size": self.page_size,
             "total_pages": self.page.paginator.num_pages,
             "current_page_number": self.page.number,
